@@ -64,6 +64,16 @@ The application is a small web application with a database. Employees use it at 
 
 **Verdict:** Best overall fit because it removes the need for the shop to maintain server hardware while supporting external access, overnight operation, and future growth.
 
+## Requirement Fit Check
+
+| Deployment | External access | 24/7 fit | Growth | No physical host access needed | Budget fit | Overall |
+|---|---|---|---|---|---|---|
+| VirtualBox laptop | Weak | Weak | Weak | No | Strong | Poor |
+| Hyper-V workstation | Possible | Fair | Fair | No | Strong | Fair |
+| Proxmox host | Possible | Good | Good | No | Fair | Good |
+| Physical PC | Possible | Fair | Weak | No | Strong | Fair |
+| Azure | Strong | Strong | Strong | Yes | Depends on sizing | Best fit |
+
 ## Recommendation
 
 **Recommendation: Azure.**
