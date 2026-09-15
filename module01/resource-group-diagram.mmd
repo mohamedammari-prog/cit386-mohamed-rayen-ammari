@@ -1,0 +1,28 @@
+flowchart TB
+    RG[Shared Azure Resource Group]
+
+    VM[Virtual Machine\n[FILL IN]]
+    DISK[OS/Data Disk\n[FILL IN]]
+    NIC[Network Interface\n[FILL IN]]
+    IP[Public IP / IP resource\n[FILL IN if present]]
+    NSG[Network Security Group\n[FILL IN if present]]
+    VNET[Virtual Network\n[FILL IN]]
+    SUBNET[Subnet\n[FILL IN]]
+    OTHER[Other resource\n[FILL IN if present]]
+
+    RG --> VM
+    RG --> DISK
+    RG --> NIC
+    RG --> IP
+    RG --> NSG
+    RG --> VNET
+    RG --> OTHER
+
+    VM --> DISK
+    VM --> NIC
+    NIC --> IP
+    NIC --> VNET
+    VNET --> SUBNET
+    NSG --> NIC
+
+    %% Replace/add nodes and arrows so this matches the actual class resource group.
