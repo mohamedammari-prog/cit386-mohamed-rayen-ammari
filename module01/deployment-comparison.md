@@ -34,7 +34,7 @@ The application is a small web application with a database. Employees use it at 
 
 ### 2. Hyper-V on a workstation
 
-**Works:** Hyper-V can isolate the application in a virtual machine and a workstation can provide enough resources for a small workload. It can run continuously and can be configured for network access.
+**Works:** Hyper-V can isolate the application in a virtual machine, and a workstation can provide enough resources for a small workload. It can run continuously and can be configured for network access.
 
 **Breaks:** The workstation is still a single physical host in the shop. Internet access, firewalling, backups, power protection, and hardware failure become the business's responsibility. Scaling beyond the workstation is limited.
 
@@ -42,7 +42,7 @@ The application is a small web application with a database. Employees use it at 
 
 ### 3. Proxmox host
 
-**Works:** Proxmox provides a dedicated virtualization platform with better server-oriented management than a laptop or ordinary workstation. The workload can run in a VM, remain online, and be expanded with additional resources or VMs later.
+**Works:** Proxmox provides a dedicated virtualization platform with stronger server-oriented management than a laptop or ordinary workstation. The workload can run in a VM, remain online, and be expanded with additional resources or VMs later.
 
 **Breaks:** The business must buy and maintain a dedicated host, handle electricity, backups, networking, and hardware replacement, and provide a secure path from the Internet to the application. The workload is still tied to an on-site server unless additional infrastructure is added.
 
@@ -58,9 +58,9 @@ The application is a small web application with a database. Employees use it at 
 
 ### 5. Azure
 
-**Works:** Azure can host the workload without requiring the shop to own the server. A virtual machine can be given Internet-facing connectivity, and Azure provides options for availability and scaling as the workload grows. Microsoft documents public IP options for Internet inbound connectivity and Azure availability options such as availability zones and scale sets. citeturn705224search1turn705224search2
+**Works:** Azure can host the workload without requiring the shop to own the server. A virtual machine can use Internet-facing connectivity, and Azure provides availability and scaling options as the workload grows.
 
-**Breaks:** Cloud costs must be monitored so that compute, storage, networking, and related services stay within the **$200/month** limit. The business also needs basic cloud administration and security configuration. Azure networking has also evolved toward more explicit outbound connectivity controls for newer private-subnet deployments, so the design cannot simply assume unrestricted Internet access by default. citeturn705224search4
+**Breaks:** Cloud costs must be monitored so compute, storage, networking, and related services remain within the **$200/month** limit. The business also needs basic cloud administration and security configuration.
 
 **Verdict:** Best overall fit because it removes the need for the shop to maintain server hardware while supporting external access, overnight operation, and future growth.
 
@@ -68,10 +68,10 @@ The application is a small web application with a database. Employees use it at 
 
 **Recommendation: Azure.**
 
-The deciding requirement is **reachability from outside the building**. The workload needs a customer-facing web endpoint while the business does not want to operate and secure an Internet-facing server on its own premises. Azure provides a cloud-hosted deployment model with supported public Internet connectivity and a clear path to scale without buying additional physical hardware. citeturn705224search1turn705224search2
+The deciding requirement is **reachability from outside the building**. The workload needs a customer-facing web endpoint while the business does not want to operate and secure an Internet-facing server on its own premises. Azure provides a cloud-hosted deployment model with supported public Internet connectivity and options for scaling without buying additional physical hardware.
 
-The $200 monthly ceiling still matters, so the deployment should start small and use cost controls and monitoring. The recommendation is not that Azure is automatically the cheapest choice; it is that external availability without maintaining on-site server hardware is the requirement that most strongly separates Azure from the other four options.
+The **$200/month** ceiling still matters, so the deployment should start small and use cost controls and monitoring. The recommendation is not that Azure is automatically the cheapest choice; it is that external availability without maintaining on-site server hardware is the requirement that most strongly separates Azure from the other four options.
 
 ## AI Disclosure
 
-AI assistance: ChatGPT was used to help organize and phrase this assignment and to research current Azure documentation. The business scenario, workload requirements, comparison judgments, and final deciding requirement should be reviewed and defended by the student before submission.
+AI assistance: ChatGPT was used to help organize and phrase this assignment and to research current Azure documentation. The business scenario, workload requirements, comparison judgments, and final deciding requirement should be reviewed and defended by the student.
